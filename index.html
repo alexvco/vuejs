@@ -7,6 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
+
   <div id="vue-app">
     <h1>{{ greet('afternoon') }}</h1>
     <p>Name: {{ name }}</p>
@@ -14,7 +15,18 @@
     <a v-bind:href="website">Google</a> <br>
     <a :href="website" target="_blank">Google shortcut</a> <br>
     <div v-html="websiteTag"></div> <br>
-    <input type="text" v-bind:value="name">
+    <input type="text" v-bind:value="name"> <br><br>
+
+    <button v-on:click="age+=1">Add a year</button>
+    <p>My age is {{ age }}</p>
+    <button v-on:click="age--">Subtract a year</button>
+    <button @click="subtractFive">Subtract five years</button>
+    <br>
+    <button v-on:dblclick="addFive">Add five</button>
+    <br>
+    <button @mouseover="zero_it">Zero it</button>
+    <br>
+    <div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div>
   </div>
 
   <script src="app.js"></script>

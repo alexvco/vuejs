@@ -3,13 +3,30 @@ new Vue({
   data: {
     name: 'Alex',
     job: 'work',
+    age: 25,
     website: 'http://www.google.com',
-    websiteTag: '<a href="http://www.google.com" target="_blank">Google website</a>'
+    websiteTag: '<a href="http://www.google.com" target="_blank">Google website</a>',
+    x: 0,
+    y:0
   },
   methods: {
     greet: function(time_of_day){
       // this # refers to the vue instance, technically to use the data above in the methods you would need to do this.data.name, but vue-js has simplified that for us and you now need to only do this.name
       return 'Good ' + time_of_day + ' ' + this.name
+    },
+    subtractFive: function(){
+      return this.age -= 5
+    },
+    addFive: function(){
+      return this.age += 5
+    },
+    zero_it: function(){
+      return this.age = 0;
+    },
+    updateXY: function(e){
+      console.log(e); // you can see all the properties available to us for the mousemove event
+      this.x = e.offsetX;
+      this.y = e.offsetY;
     }
   }
 });
