@@ -11,6 +11,10 @@
     <h1>{{ greet('afternoon') }}</h1>
     <p>Name: {{ name }}</p>
     <p>Job: {{ job }}</p>
+    <a v-bind:href="website">Google</a> <br>
+    <a :href="website" target="_blank">Google shortcut</a> <br>
+    <div v-html="websiteTag"></div> <br>
+    <input type="text" v-bind:value="name">
   </div>
 
   <script src="app.js"></script>
