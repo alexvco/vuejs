@@ -19,6 +19,7 @@
     <input type="text" v-bind:value="name"> <br><br>
 
     <!-- events -->
+    <h1>Events</h1>
     <button v-on:click="age+=1">Add a year</button>
     <p>My age is {{ age }}</p>
     <button v-on:click="age--">Subtract a year</button>
@@ -28,11 +29,28 @@
     <br>
     <button @mouseover="zero_it">Zero it</button>
     <br>
+    <button v-on:mouseout="addFive">Zero it</button>
+    <br>
     <div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div> <br>
 
     <!-- event modifiers: https://vuejs.org/v2/guide/events.html#Event-Modifiers -->
+    <h1>Event modifiers</h1>
     <button v-on:click.once="age+=1">Add a year</button>
-    <a v-on:click.prevent="myclick" href="http://www.google.com">G</a>
+    <a v-on:click.prevent="myclick" href="http://www.google.com">G</a> <br>
+
+    <!-- keyboard events (onkeydown, onkeypress, onkeyup) and key modifiers https://vuejs.org/v2/guide/events.html#Key-Modifiers -->
+    <h1>Keyboard events</h1>
+    <label>Name:</label> <br>
+    <input type="text" v-on:keyup="logName"> <br>
+    <label>Age:</label> <br>
+    <input type="text" v-on:keyup="logAge"> <br>
+    <label>Job:</label> <br>
+    <input type="text" v-on:keyup.enter="logJob"> <br>
+    <label>Job:</label> <br>
+    <input type="text" v-on:keyup.tab="logJob"> <br>
+    <label>This will log when you click alt + enter (need to hold alt)</label> <br>
+    <input type="text" v-on:keyup.alt.enter="logJob"> <br>
+
   </div>
 
   <script src="app.js"></script>

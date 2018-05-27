@@ -31,6 +31,15 @@ new Vue({
     myclick: function(e){
       // e.preventDefault(); this is done via the event modifier prevent
       console.log('you clicked');
+    },
+    logName: function(e){
+      console.log(e.target.value);
+    },
+    logAge: function(){
+      console.log('you entered your Age');
+    },
+    logJob: function(){
+      console.log('you entered your Job');
     }
   }
 });
