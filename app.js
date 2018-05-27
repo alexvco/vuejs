@@ -7,7 +7,9 @@ new Vue({
     website: 'http://www.google.com',
     websiteTag: '<a href="http://www.google.com" target="_blank">Google website</a>',
     x: 0,
-    y:0
+    y:0,
+    a: 0,
+    b: 0
   },
   methods: {
     greet: function(time_of_day){
@@ -43,6 +45,24 @@ new Vue({
     },
     insertName: function(e){
       this.name = e.target.value;
+    }
+    // addToA: function() {
+    //   console.log('this is method addToA')
+    //   return this.a + this.age
+    // },
+    // addToB: function() {
+    //   console.log('this is method addToB')
+    //   return this.b + this.age
+    // }
+  },
+  computed: {
+    addToA: function() {
+      console.log('this is computed property addToA')
+      return this.a + this.age
+    },
+    addToB: function() {
+      console.log('this is computed property addToB')
+      return this.b + this.age
     }
   }
 });
