@@ -51,6 +51,16 @@
     <label>This will log when you click alt + enter (need to hold alt)</label> <br>
     <input type="text" v-on:keyup.alt.enter="logJob"> <br>
 
+    <!-- 2 way data binding (v-model) -->
+    <h1>2 way data binding</h1>
+    <label>Name:</label> <br>
+    <input type="text" v-on:keyup="insertName"> <br>
+    <span>{{ name }}</span>
+    <h3>this is the same as insertName, v-model is what 2 way data binding is all about</h3>
+    <label>Job:</label> <br>
+    <input type="text" v-model="job"> <br>
+    <span>{{ job }}</span>
+
   </div>
 
   <script src="app.js"></script>

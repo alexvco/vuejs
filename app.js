@@ -40,6 +40,9 @@ new Vue({
     },
     logJob: function(){
       console.log('you entered your Job');
+    },
+    insertName: function(e){
+      this.name = e.target.value;
     }
   }
 });
