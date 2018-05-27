@@ -27,6 +27,10 @@ new Vue({
       console.log(e); // you can see all the properties available to us for the mousemove event
       this.x = e.offsetX;
       this.y = e.offsetY;
+    },
+    myclick: function(e){
+      // e.preventDefault(); this is done via the event modifier prevent
+      console.log('you clicked');
     }
   }
 });
