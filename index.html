@@ -71,6 +71,20 @@
     <p>Age + A = {{ addToA }}</p>
     <p>Age + B = {{ addToB }}</p>
 
+    <!-- Dynamic css classes -->
+    <h1>Dynamic CSS classes</h1>
+    <h2>Example 1 (Adds and removes class on click)</h2>
+    <!-- this alternates the value of our data "available" between true and false, thereby switching the css between red and green -->
+    <div v-on:click="available = !available" v-bind:class="{class_visible: true, class_invisible: false, available: available}">
+      <span>Ryu</span>
+    </div>
+    <h2>Example 2</h2>
+    <button v-on:click="nearby = !nearby">Toggle Nearby</button>
+    <button v-on:click="available = !available">Toggle Available</button>
+    <div v-bind:class="compClasses">
+      <span>Yoshi</span>
+    </div>
+
   </div>
 
   <script src="app.js"></script>
