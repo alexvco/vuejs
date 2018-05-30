@@ -10,80 +10,94 @@
 
   <div id="vue-app">
     <!-- rendering data -->
-    <h1>{{ greet('afternoon') }}</h1>
-    <p>Name: {{ name }}</p>
-    <p>Job: {{ job }}</p>
-    <a v-bind:href="website">Google</a> <br>
-    <a :href="website" target="_blank">Google shortcut</a> <br>
-    <div v-html="websiteTag"></div> <br>
-    <input type="text" v-bind:value="name"> <br><br>
+        <h1>{{ greet('afternoon') }}</h1>
+        <p>Name: {{ name }}</p>
+        <p>Job: {{ job }}</p>
+        <a v-bind:href="website">Google</a> <br>
+        <a :href="website" target="_blank">Google shortcut</a> <br>
+        <div v-html="websiteTag"></div> <br>
+        <input type="text" v-bind:value="name"> <br><br>
 
     <!-- events -->
-    <h1>Events</h1>
-    <button v-on:click="age+=1">Add a year</button>
-    <p>My age is {{ age }}</p>
-    <button v-on:click="age--">Subtract a year</button>
-    <button @click="subtractFive">Subtract five years</button><br>
-    <button v-on:dblclick="addFive">Add five</button><br>
-    <button @mouseover="zero_it">Zero it</button><br>
-    <button v-on:mouseout="addFive">Zero it</button><br>
-    <div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div> <br>
+        <h1>Events</h1>
+        <button v-on:click="age+=1">Add a year</button>
+        <p>My age is {{ age }}</p>
+        <button v-on:click="age--">Subtract a year</button>
+        <button @click="subtractFive">Subtract five years</button><br>
+        <button v-on:dblclick="addFive">Add five</button><br>
+        <button @mouseover="zero_it">Zero it</button><br>
+        <button v-on:mouseout="addFive">Zero it</button><br>
+        <div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div> <br>
 
     <!-- event modifiers: https://vuejs.org/v2/guide/events.html#Event-Modifiers -->
-    <h1>Event modifiers</h1>
-    <button v-on:click.once="age+=1">Add a year</button>
-    <a v-on:click.prevent="myclick" href="http://www.google.com">G</a> <br>
+        <h1>Event modifiers</h1>
+        <button v-on:click.once="age+=1">Add a year</button>
+        <a v-on:click.prevent="myclick" href="http://www.google.com">G</a> <br>
 
     <!-- keyboard events (onkeydown, onkeypress, onkeyup) and key modifiers https://vuejs.org/v2/guide/events.html#Key-Modifiers -->
-    <h1>Keyboard events</h1>
-    <label>Name:</label> <br>
-    <input type="text" v-on:keyup="logName"> <br>
-    <label>Age:</label> <br>
-    <input type="text" v-on:keyup="logAge"> <br>
-    <label>Job:</label> <br>
-    <input type="text" v-on:keyup.enter="logJob"> <br>
-    <label>Job:</label> <br>
-    <input type="text" v-on:keyup.tab="logJob"> <br>
-    <label>This will log when you click alt + enter (need to hold alt)</label> <br>
-    <input type="text" v-on:keyup.alt.enter="logJob"> <br>
+        <h1>Keyboard events</h1>
+        <label>Name:</label> <br>
+        <input type="text" v-on:keyup="logName"> <br>
+        <label>Age:</label> <br>
+        <input type="text" v-on:keyup="logAge"> <br>
+        <label>Job:</label> <br>
+        <input type="text" v-on:keyup.enter="logJob"> <br>
+        <label>Job:</label> <br>
+        <input type="text" v-on:keyup.tab="logJob"> <br>
+        <label>This will log when you click alt + enter (need to hold alt)</label> <br>
+        <input type="text" v-on:keyup.alt.enter="logJob"> <br>
 
     <!-- 2 way data binding (v-model) -->
-    <h1>2 way data binding</h1>
-    <label>Name:</label> <br>
-    <input type="text" v-on:keyup="insertName"> <br>
-    <span>{{ name }}</span>
-    <h3>this is the same as insertName, v-model is what 2 way data binding is all about</h3>
-    <label>Job:</label> <br>
-    <input type="text" v-model="job"> <br>
-    <span>{{ job }}</span>
+        <h1>2 way data binding</h1>
+        <label>Name:</label> <br>
+        <input type="text" v-on:keyup="insertName"> <br>
+        <span>{{ name }}</span>
+        <h3>this is the same as insertName, v-model is what 2 way data binding is all about</h3>
+        <label>Job:</label> <br>
+        <input type="text" v-model="job"> <br>
+        <span>{{ job }}</span>
 
     <!-- Computed Properties -->
-    <h1>Computed Properties</h1>
-    <button v-on:click="a++">Add to A</button>
-    <button v-on:click="b++">Add to B</button>
-    <p>A - {{a}}</p>
-    <p>B - {{b}}</p>
-    <h3>This is running the methods (commented out)</h3>
-    <!-- <p>Age + A = {{ addToA() }}</p> -->
-    <!-- <p>Age + B = {{ addToB() }}</p> -->
-    <h3>This is running the computed properties</h3>
-    <h4>Its more efficient to use a computed property alot of the time than a method, because vuejs doesnt know when it comes to methods which ones it needs to run depending on what has updated but computed properties do, they kind of watch the variables that need to be computed/calculated and they only run when they need it.</h4>
-    <p>Age + A = {{ addToA }}</p>
-    <p>Age + B = {{ addToB }}</p>
+        <h1>Computed Properties</h1>
+        <button v-on:click="a++">Add to A</button>
+        <button v-on:click="b++">Add to B</button>
+        <p>A - {{a}}</p>
+        <p>B - {{b}}</p>
+        <h3>This is running the methods (commented out)</h3>
+            <!-- <p>Age + A = {{ addToA() }}</p> -->
+            <!-- <p>Age + B = {{ addToB() }}</p> -->
+        <h3>This is running the computed properties</h3>
+        <h4>Its more efficient to use a computed property alot of the time than a method, because vuejs doesnt know when it comes to methods which ones it needs to run depending on what has updated but computed properties do, they kind of watch the variables that need to be computed/calculated and they only run when they need it.</h4>
+        <p>Age + A = {{ addToA }}</p>
+        <p>Age + B = {{ addToB }}</p>
 
     <!-- Dynamic css classes -->
-    <h1>Dynamic CSS classes</h1>
-    <h2>Example 1 (Adds and removes class on click)</h2>
-    <!-- this alternates the value of our data "available" between true and false, thereby switching the css between red and green -->
-    <div v-on:click="available = !available" v-bind:class="{class_visible: true, class_invisible: false, available: available}">
-      <span>Ryu</span>
-    </div>
-    <h2>Example 2</h2>
-    <button v-on:click="nearby = !nearby">Toggle Nearby</button>
-    <button v-on:click="available = !available">Toggle Available</button>
-    <div v-bind:class="compClasses">
-      <span>Yoshi</span>
-    </div>
+        <h1>Dynamic CSS classes</h1>
+        <h2>Example 1 (Adds and removes class on click)</h2>
+            <!-- this alternates the value of our data "available" between true and false, thereby switching the css between red and green -->
+        <div v-on:click="available = !available" v-bind:class="{class_visible: true, class_invisible: false, available: available}">
+          <span>Ryu</span>
+        </div>
+        <h2>Example 2</h2>
+        <button v-on:click="nearby = !nearby">Toggle Nearby</button>
+        <button v-on:click="available = !available">Toggle Available</button>
+        <div v-bind:class="compClasses">
+          <span>Yoshi</span>
+        </div>
+
+    <!-- Conditionals -->
+    <h1>Conditionals</h1>
+    <button v-on:click="error = !error">Toggle Error</button>
+    <button v-on:click="success = !success">Toggle Success</button>
+    <p v-if="true">This will show</p>
+    <p v-if="false">This will not show</p>
+    <p v-if="error">Error is true if you see this</p>
+    <p v-else-if="success">Success is true if you see this and error is false</p>
+    <br>
+    <h3>The following does the same as above except instead of removing the element from the DOM, it makes the style display: none.</h3>
+    <p v-show="error">This will show if error is true</p>
+    <p v-show="success">This will show if success is true</p>
+
 
   </div>
 
