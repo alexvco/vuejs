@@ -98,8 +98,28 @@
     <p v-show="error">This will show if error is true</p>
     <p v-show="success">This will show if success is true</p>
 
-
+    <!-- For loops -->
+    <h1>For loops</h1>
+    <p>{{characters[0]}}</p>
+    <h3>Using v-for</h3>
+    <p v-for="character in characters">{{character}}</p>
+    <ul>
+        <li v-for="(x, i) in ninjas">{{i}} - {{ x.name }} is {{ x.age }} years old</li>
+    </ul>
+        <!-- instead of using divs, you can use a template tag and therefore no need to render x many div tags in your html -->
+    <template v-for="(ninja, i) in ninjas">
+        <h3>{{i}}</h3>
+        <p>{{ninja.name}}</p>
+    </template>
+    <br>
+    <h3>Nested loops (cycling through key value of an objects attributes)</h3>
+    <template v-for="ninja in ninjas">
+        <div v-for="(val, key) in ninja">
+            <p>{{key}} - {{val}}</p>
+        </div>
+    </template>
   </div>
+  <!-- #vue-app -->
 
   <script src="app.js"></script>
 </body>
