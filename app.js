@@ -1,3 +1,34 @@
+
+// A component is a reusable "template" that we can use in each of our Vue instances, instead of copy-pasting the code into all our Vue instances
+
+// Vue component takes 2 params, the first is a string which is the name of this component,
+// the second one is an object, with has different properties (most common one is template)
+// - template: the template that will be rendered when this component is called
+
+// Make sure the component comes before your Vue instances
+
+Vue.component('say_hi', {
+  template: '<p>I am a reusable component and my name is: {{name}}. <button v-on:click="changeMe">Change Me</button></p>',
+  // data is a function that returns an object, as opposed to the data in a Vue instance 
+  // this is because when creating and using a component, there will be multiple instances using the same kind of definition
+  // if we were to make data a plain object instead of a function, then what we are doing is saying 
+  // all those instances that use this component will share the object by reference
+  // and hence any change you make to any single data, it will update it in every single component that we use (every Vue instance that the compoenent is being used)
+  // By providing data as a function, everytime we create a new instance of it, we are just calling this function to return a fresh copy of this data
+  // So if we change this data in one of the instances of the component, then its not going to update it in another one
+  data: function(){
+    return {
+      name: 'Yolo'
+    }
+  },
+  methods: {
+    changeMe: function(){
+      this.name = 'Mario';
+    }
+  }
+});
+
+
 // we are storing this instance to a variable called one
 var one = new Vue({
   el: '#vue-app-one',
@@ -107,3 +138,5 @@ var two = new Vue({
 
 
 // two.title = 'This will override the title data in vue-app-two';
+
+
