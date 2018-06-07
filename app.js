@@ -1,5 +1,6 @@
-new Vue({
-  el: '#vue-app',
+// we are storing this instance to a variable called one
+var one = new Vue({
+  el: '#vue-app-one',
   data: {
     name: 'Alex',
     job: 'work',
@@ -86,3 +87,23 @@ new Vue({
 // data binding: basically if you want to include website data above as the value of an a tag's href, you need to bind it
 // the way to bind the data is via a directive: an instruction such as v-bind:href that tells vuejs to basically bind the href attribute
 // to some dynamic data that we have stored on our view instance, there is also a shortcut you can do :href instead of v-bind:href
+
+var two = new Vue({
+  el: '#vue-app-two',
+  data: {
+    title: "Vue App Two"
+  },
+  methods: {
+    changeName: function(){
+      one.name = "JOEL"
+    }
+  },
+  computed: {
+    greet: function(){
+      return "Hello from " + this.title
+    }
+  }
+});
+
+
+// two.title = 'This will override the title data in vue-app-two';

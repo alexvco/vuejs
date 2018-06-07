@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <div id="vue-app">
+  <div id="vue-app-one">
     <!-- rendering data -->
         <h1>{{ greet('afternoon') }}</h1>
         <p>Name: {{ name }}</p>
@@ -86,40 +86,53 @@
         </div>
 
     <!-- Conditionals -->
-    <h1>Conditionals</h1>
-    <button v-on:click="error = !error">Toggle Error</button>
-    <button v-on:click="success = !success">Toggle Success</button>
-    <p v-if="true">This will show</p>
-    <p v-if="false">This will not show</p>
-    <p v-if="error">Error is true if you see this</p>
-    <p v-else-if="success">Success is true if you see this and error is false</p>
-    <br>
-    <h3>The following does the same as above except instead of removing the element from the DOM, it makes the style display: none.</h3>
-    <p v-show="error">This will show if error is true</p>
-    <p v-show="success">This will show if success is true</p>
+        <h1>Conditionals</h1>
+        <button v-on:click="error = !error">Toggle Error</button>
+        <button v-on:click="success = !success">Toggle Success</button>
+        <p v-if="true">This will show</p>
+        <p v-if="false">This will not show</p>
+        <p v-if="error">Error is true if you see this</p>
+        <p v-else-if="success">Success is true if you see this and error is false</p>
+        <br>
+        <h3>The following does the same as above except instead of removing the element from the DOM, it makes the style display: none.</h3>
+        <p v-show="error">This will show if error is true</p>
+        <p v-show="success">This will show if success is true</p>
 
     <!-- For loops -->
-    <h1>For loops</h1>
-    <p>{{characters[0]}}</p>
-    <h3>Using v-for</h3>
-    <p v-for="character in characters">{{character}}</p>
-    <ul>
-        <li v-for="(x, i) in ninjas">{{i}} - {{ x.name }} is {{ x.age }} years old</li>
-    </ul>
-        <!-- instead of using divs, you can use a template tag and therefore no need to render x many div tags in your html -->
-    <template v-for="(ninja, i) in ninjas">
-        <h3>{{i}}</h3>
-        <p>{{ninja.name}}</p>
-    </template>
-    <br>
-    <h3>Nested loops (cycling through key value of an objects attributes)</h3>
-    <template v-for="ninja in ninjas">
-        <div v-for="(val, key) in ninja">
-            <p>{{key}} - {{val}}</p>
-        </div>
-    </template>
+        <h1>For loops</h1>
+        <p>{{characters[0]}}</p>
+        <h3>Using v-for</h3>
+        <p v-for="character in characters">{{character}}</p>
+        <ul>
+            <li v-for="(x, i) in ninjas">{{i}} - {{ x.name }} is {{ x.age }} years old</li>
+        </ul>
+            <!-- instead of using divs, you can use a template tag and therefore no need to render x many div tags in your html -->
+        <template v-for="(ninja, i) in ninjas">
+            <h3>{{i}}</h3>
+            <p>{{ninja.name}}</p>
+        </template>
+        <br>
+        <h3>Nested loops (cycling through key value of an objects attributes)</h3>
+        <template v-for="ninja in ninjas">
+            <div v-for="(val, key) in ninja">
+                <p>{{key}} - {{val}}</p>
+            </div>
+        </template>
+
   </div>
-  <!-- #vue-app -->
+  <!-- #vue-app-one -->
+
+  <br>
+  <br>
+  <br>
+
+
+  <div id="vue-app-two">
+    <h1>Multiple Vue instances</h1>
+    <h3>{{title}}</h3>
+    <p>{{greet}}</p>
+    <button v-on:click="changeName">Change App One Name</button>
+  </div>
 
   <script src="app.js"></script>
 </body>
