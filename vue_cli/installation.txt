@@ -1,0 +1,14 @@
+$ npm install -g vue-cli
+$ vue init webpack-simple vuejsplaylist # instead of webpack-simple, you can use 'webpack' which is the full featured webpack with hot reloading, css extraction etc...
+
+To get started:
+   
+     cd vuejsplaylist
+     npm install
+     npm run dev
+
+The last command will run your dev server on port 8080  
+
+
+If your .vue files text are all the same color. You need to install vue-syntax-highlight package
+Via Package Control: search for Vue Syntax Highlight
