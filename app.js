@@ -137,6 +137,21 @@ var two = new Vue({
 });
 
 
+var vuerefs = new Vue({
+  el: '#vue-refs',
+  data: {
+    output: "pizza"
+  },
+  methods: {
+    readRefs: function(){
+      console.log(this.$refs.alex.value); //note that $refs selects all the refs in this Vue instance, alex is the specific ref in this case, and you also have access to much more properties not just .value
+      this.output = this.$refs.alex.value;
+      console.log(this.$refs.tt.innerText);
+    }
+  }
+});
+
+
 // two.title = 'This will override the title data in vue-app-two';
 
 
