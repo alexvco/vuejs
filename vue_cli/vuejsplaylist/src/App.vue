@@ -4,17 +4,31 @@
     <h1>{{ title}}</h1>
     <p>{{ greeting() }}</p>
     <my_ninjas_component></my_ninjas_component>
+
+    <br>
+    <br>
+    <br>
+
+    <h2>Components</h2>
+      <my_header_component></my_header_component>
+      <my_main_component></my_main_component>
+      <my_footer_component></my_footer_component>
+
   </div>
 </template>
 
 <script>
-// import Ninjas from './Ninjas.vue' // This is to import/use components locally
+import Header from './components/Header.vue' // This is to import/use components locally
+import Main from './components/Main.vue' // This is to import/use components locally
+import Footer from './components/Footer.vue' // This is to import/use components locally
 
 export default {
   // This is to import/use components locally
-  // components: {
-  //   'my_ninjas_component': Ninjas
-  // },
+  components: {
+    'my_header_component': Header,
+    'my_main_component': Main,
+    'my_footer_component': Footer
+  },
   data: function () {
     return {
       title: 'First Vue file'
