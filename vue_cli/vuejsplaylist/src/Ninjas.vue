@@ -1,7 +1,10 @@
 <template>
-  <ul>
-    <li v-for="ninja in ninjas">{{ ninja }}</li>
-  </ul>
+  <div>
+    <h1>My ninjas</h1>
+    <ul>
+      <li v-for="ninja in ninjas">{{ ninja }}</li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -13,4 +16,8 @@ export default {
   }
 }
 </script>
+
+<style>
+  
+</style>
 

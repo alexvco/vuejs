@@ -28,6 +28,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
-
+<!-- this scoped attribute at the end ties the styles below only to this App component and not to its nested components  -->
+<!-- internally when we use scopes, vue.js gives each component a unique identifier and thats how it knows to separate the h1's in different components -->
+<style lang="scss" scoped>
+  h1{
+    color: purple;
+  }
 </style>
