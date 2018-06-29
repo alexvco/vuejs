@@ -20,14 +20,14 @@
 
 <script>
   import Header from './components/Header.vue' // This is to import/use components locally
-  import Main from './components/Main.vue' // This is to import/use components locally
+  import Middle from './components/Middle.vue' // This is to import/use components locally
   import Footer from './components/Footer.vue' // This is to import/use components locally
 
   export default {
     // This is to import/use components locally
     components: {
       'my_header_component': Header,
-      'my_main_component': Main,
+      'my_middle_component': Middle,
       'my_footer_component': Footer
     },
     data: function () {
