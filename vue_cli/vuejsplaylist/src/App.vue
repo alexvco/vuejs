@@ -11,35 +11,41 @@
 
     <h2>Components</h2>
       <my_header_component></my_header_component>
-      <my_main_component></my_main_component>
+      <!-- this is where/how you send the props data -->
+      <my_main_component v-bind:my_prop="my_props_data"></my_main_component>
       <my_footer_component></my_footer_component>
 
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue' // This is to import/use components locally
-import Main from './components/Main.vue' // This is to import/use components locally
-import Footer from './components/Footer.vue' // This is to import/use components locally
+  import Header from './components/Header.vue' // This is to import/use components locally
+  import Main from './components/Main.vue' // This is to import/use components locally
+  import Footer from './components/Footer.vue' // This is to import/use components locally
 
-export default {
-  // This is to import/use components locally
-  components: {
-    'my_header_component': Header,
-    'my_main_component': Main,
-    'my_footer_component': Footer
-  },
-  data: function () {
-    return {
-      title: 'First Vue file'
-    }
-  },
-  methods: {
-    greeting: function(){
-      return 'heeeeey';
+  export default {
+    // This is to import/use components locally
+    components: {
+      'my_header_component': Header,
+      'my_main_component': Main,
+      'my_footer_component': Footer
+    },
+    data: function () {
+      return {
+        title: 'First Vue file',
+        my_props_data: [
+          {page_one: 1},
+          {page_two: 2},
+          {page_three: 3}
+        ]
+      }
+    },
+    methods: {
+      greeting: function(){
+        return 'heeeeey';
+      }
     }
   }
-}
 </script>
 
 <!-- this scoped attribute at the end ties the styles below only to this App component and not to its nested components  -->
@@ -49,3 +55,7 @@ export default {
     color: purple;
   }
 </style>
+
+
+<!-- Props are a way to transfer data from a parent component to a child component, its similar to how you pass data from ruby to js via data attribute -->
+<!-- Remember to use v-bind if you want to use dynamic data in your tag attributes -->
