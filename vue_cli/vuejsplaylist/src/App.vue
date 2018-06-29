@@ -59,3 +59,25 @@
 
 <!-- Props are a way to transfer data from a parent component to a child component, its similar to how you pass data from ruby to js via data attribute -->
 <!-- Remember to use v-bind if you want to use dynamic data in your tag attributes -->
+<!-- Primitive types are: Boolean, String and Number -->
+<!-- Reference types are: Arrays, Objects -->
+
+<!-- 
+when passing props to a child component of Reference type, 
+we are only passing a reference to the original object in the parent component (not the actual data), 
+therefore if we make changes to the Array or Object in the child component, 
+it will also change in the parent component and other child components that are being referenced by it
+ -->
+
+<!-- 
+when passing props to a child component of Primitive type,
+we are actually passing the data, therefore any changes we make 
+to that prop data in the child component will only be done/effective
+for that child component as opposed to props of Reference type
+-->
+
+
+
+
+
+
