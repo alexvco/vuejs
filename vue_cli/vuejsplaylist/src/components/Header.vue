@@ -1,16 +1,22 @@
 <template>
   <div>
     <header>
-      <h3>{{title}}</h3>
+      <h3>{{header_title}}</h3>
+      <p>{{title}}</p>
     </header>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String
+    }
+  },
   data: function () {
     return {
-      title: 'Header component'
+      header_title: 'Header component'
     }
   }
 }
@@ -24,6 +30,9 @@ export default {
   h3{
     text-align: center;
     color: #222;
+  }
+  p{
+    text-align: center;
   }
 </style>
 

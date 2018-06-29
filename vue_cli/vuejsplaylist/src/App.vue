@@ -10,10 +10,10 @@
     <br>
 
     <h2>Components</h2>
-      <my_header_component></my_header_component>
+      <my_header_component v-bind:title="title"></my_header_component>
       <!-- this is where/how you send the props data -->
-      <my_main_component v-bind:my_prop="my_props_data"></my_main_component>
-      <my_footer_component></my_footer_component>
+      <my_middle_component v-bind:my_prop="my_props_data"></my_middle_component>
+      <my_footer_component v-bind:title="title" v-on:changeTitle="updateTitle"></my_footer_component>
 
   </div>
 </template>
@@ -43,6 +43,9 @@
     methods: {
       greeting: function(){
         return 'heeeeey';
+      },
+      updateTitle: function(data_passed){
+        this.title = data_passed;
       }
     }
   }
@@ -77,6 +80,14 @@ for that child component as opposed to props of Reference type
 -->
 
 
+<!-- 
+In order to duplicate the behavior of Reference type to Primitive type,
+basically updating prop data in one component will update it in parent component and all subcomponents,
+we need to do so with events (an event that fires up to the parent component).
+The parent component is setup to listen out for when this event is emitted, so that 
+when it is emitted, it can react to it.
+The reaction could be to change the data stored in its (the parent) component.
+ -->
 
 
 
