@@ -89,6 +89,11 @@ when it is emitted, it can react to it.
 The reaction could be to change the data stored in its (the parent) component.
  -->
 
-
+<!-- 
+Event bus: Its a Vue instance that can emit events and listen to events and react to them.
+The point of event bus is to communicate between child components without going through the parent
+The way we do it is by emitting an event on the "event bus" in child_component_1 and 
+listening to that event on the "event bus" in child_component_2
+ -->
 
 

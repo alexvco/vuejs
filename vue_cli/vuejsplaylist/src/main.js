@@ -6,6 +6,9 @@ import App from './App.vue' // This is your root component, you can nest other c
 import Ninjas from './Ninjas.vue'
 Vue.component('my_ninjas_component', Ninjas)
 
+
+export const my_bus = new Vue();
+
 // we are creating a new vue instance here which will render the component App.vue (see import above) into #app div in index.html file
 new Vue({
   el: '#app',

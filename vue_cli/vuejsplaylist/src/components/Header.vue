@@ -2,12 +2,13 @@
   <div>
     <header>
       <h3>{{header_title}}</h3>
-      <p>{{title}}</p>
+      <p v-on:click="chgThat">{{title}}</p>
     </header>
   </div>
 </template>
 
 <script>
+import { my_bus } from '../main';
 export default {
   props: {
     title: {
@@ -17,6 +18,12 @@ export default {
   data: function () {
     return {
       header_title: 'Header component'
+    }
+  },
+  methods: {
+    chgThat: function() {
+      this.title = 'Vueee';
+      my_bus.$emit('changedd', 'Vueee');
     }
   }
 }
