@@ -15,6 +15,16 @@
       <my_middle_component v-bind:my_prop="my_props_data"></my_middle_component>
       <my_footer_component v-bind:title="title" v-on:changeTitle="updateTitle"></my_footer_component>
 
+    <br>
+    <br>
+    <br>
+
+    <h2>formHelper (the point of using slots is to pass html inside a component)</h2>
+      <my_formHelper_component>
+        <h3 slot="my_slot_title">{{slot_title}}</h3>
+        <p slot="my_slot_text">I am the paragraph text for the slot</p>
+      </my_formHelper_component>
+
   </div>
 </template>
 
@@ -22,17 +32,20 @@
   import Header from './components/Header.vue' // This is to import/use components locally
   import Middle from './components/Middle.vue' // This is to import/use components locally
   import Footer from './components/Footer.vue' // This is to import/use components locally
+  import formHelper from './components/formHelper.vue' // This is to import/use components locally
 
   export default {
     // This is to import/use components locally
     components: {
       'my_header_component': Header,
       'my_middle_component': Middle,
-      'my_footer_component': Footer
+      'my_footer_component': Footer,
+      'my_formHelper_component': formHelper
     },
     data: function () {
       return {
         title: 'First Vue file',
+        slot_title: 'I am a dynamic slot title',
         my_props_data: [
           {page_one: 1},
           {page_two: 2},
