@@ -25,6 +25,29 @@
         <p slot="my_slot_text">I am the paragraph text for the slot</p>
       </my_formHelper_component>
 
+
+    <br>
+    <br>
+    <br>
+
+    <h2>Dynamic components</h2>
+      <!-- in this example, we dont want to output 2 components, we just want to output 1 component -->
+      <!-- and we want that component to dynamically change between my_formOne and my_formTwo depending on user interaction with the site -->
+      <!-- hence comes to play the <component> tag, which is a vue tag that allows dynamic components-->
+
+      <!-- <component is="my_formTwo"></component> -->
+
+      <!-- this is with data binding which allows the dynamicivity of the component tag-->
+
+      <keep-alive>
+        <component v-bind:is="component_x"></component>
+      </keep-alive>
+      <button v-on:click="component_x = 'my_formOne'">Show form one</button>
+      <button v-on:click="component_x = 'my_formTwo'">Show form two</button>
+
+      <!-- when we switch components back and forth by clicking on the buttons, any data associated with that component we had filled out will be lost/destroyed -->
+      <!-- as switching between components destroys the component and creates a completely new instance of that component. To persist the data we need the keep-alive tag -->
+
   </div>
 </template>
 
@@ -33,6 +56,9 @@
   import Middle from './components/Middle.vue' // This is to import/use components locally
   import Footer from './components/Footer.vue' // This is to import/use components locally
   import formHelper from './components/formHelper.vue' // This is to import/use components locally
+  import formOne from './components/formOne.vue' // This is to import/use components locally
+  import formTwo from './components/formTwo.vue' // This is to import/use components locally
+  import formOneTwoHelper from './components/formOneTwoHelper.vue' // This is to import/use components locally
 
   export default {
     // This is to import/use components locally
@@ -40,7 +66,10 @@
       'my_header_component': Header,
       'my_middle_component': Middle,
       'my_footer_component': Footer,
-      'my_formHelper_component': formHelper
+      'my_formHelper_component': formHelper,
+      'my_formOne': formOne,
+      'my_formTwo': formTwo,
+      'my_formOneTwo': formOneTwoHelper
     },
     data: function () {
       return {
@@ -50,7 +79,8 @@
           {page_one: 1},
           {page_two: 2},
           {page_three: 3}
-        ]
+        ],
+        component_x: 'my_formTwo'
       }
     },
     methods: {
