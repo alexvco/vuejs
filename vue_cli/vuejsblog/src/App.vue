@@ -1,20 +1,25 @@
 <template>
   <div id="app">
-    <h1>HEY</h1>
+    <add-blog></add-blog>
   </div>
 </template>
 
 <script>
-export default {
-  data: function() {
-    return {
+  import addBlog from './components/addBlog.vue'
+  
+  export default {
+    components: {
+      'add-blog': addBlog
+    },
+    data: function() {
+      return {
+
+      }
+    },
+    methods: {
 
     }
-  },
-  methods: {
-
   }
-}
 </script>
 
 <style lang="scss">
