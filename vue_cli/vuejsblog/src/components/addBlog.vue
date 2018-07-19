@@ -3,14 +3,16 @@
   	<h2>Add a New Blog Post</h2>
   	<form action="">
   		<label>Blog Title:</label>
-  		<input type="text" required>
+  		<!-- .lazy basically inserts it in preview on tab, rather than on keyup which is the default -->
+  		<input type="text" v-model.lazy="blog.title" required>
 			<label>Blog Content:</label>
-  		<textarea></textarea>
+  		<textarea v-model="blog.content"></textarea>
   	</form>
   	<div id="preview">
   		<h3>Preview Blog</h3>
-  		<p>Blog Title</p>
-  		<p>Blog Content</p>
+  		<p>Blog Title: {{blog.title}}</p>
+  		<p>Blog Content:</p>
+  		<p>{{blog.content}}</p>
   	</div>
   </div>
 </template>
@@ -19,7 +21,10 @@
 	export default {
 	  data: function() {
 	    return {
-
+	    	blog: {
+		    	title: "",
+		    	content: ""
+		    }
 	    }
 	  },
 	  methods: {
