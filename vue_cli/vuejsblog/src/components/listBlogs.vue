@@ -2,11 +2,10 @@
   <!-- make sure to pass 'wide' as a string otherwise vuejs will think this is a data/object or property that is defined -->
   <!-- and will not be able to find it in the script below and hence will give error in the console -->
   <div v-theme:column="'wide'" id="show-blogs">
-    <h1>All Blog Articles</h1>
+    <h1>List Blog Titles</h1>
     <input type="text" v-model="search" placeholder="search blogs">
     <div v-for="blog in filteredBlogs" class="single-blog">
       <h2 v-rainbow>{{blog.title | to-uppercase }}</h2>
-      <article>{{blog.body | snippet }}</article>
     </div>
   </div>
 </template>
