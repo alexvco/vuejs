@@ -34,6 +34,24 @@ Vue.directive("theme", {
 	}
 });
 
+// Filter: we can use filters to change the output of data into our browser. 
+// For example, lets say we want to change the output of a data by uppercasing it 
+// or by any shape or form such as "snippet"-ing it.
+// We can use a filters to do that for us
+// Filters do not change the data directly, we only change how their output to the browser
+// The way we use filters is by first adding a pipe | to the end of data we want to use the filter on
+// and then the filter name
+// Vue.filter takes 2 args, the first is the name of the filter 
+// the second is a function that takes a value which is the "data" that comes before the pipe | (data which we used the filter on)
+
+Vue.filter('to-uppercase', function(value){
+	return value.toUpperCase();
+})
+
+Vue.filter('snippet', function(value){
+	return value.slice(0,100) + '...';
+})
+
 new Vue({
   el: '#app',
   render: h => h(App)
