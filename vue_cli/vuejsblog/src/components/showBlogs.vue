@@ -42,6 +42,39 @@
         // had to bind this as its inside second function and this no longer refers to the component.
         // you can also use fat arrow .filter((blog) => {}) which automatically binds this for you
       }
+    },
+    filters: {
+      'to-uppercase': function(value){
+        return value.toUpperCase();
+      },
+      // ** this is exactly as 'to-uppercase' above but with a different way of writing it
+      // toUppercase(value){
+      //   return value.toUpperCase();
+      // },
+      'snippet': function(value){
+        return value.slice(0,100) + '...';
+      }
+    },
+    directives: {
+      'rainbow': {
+        bind: function(el, binding, vnode){
+          // Math.random() returns a random number between 0 (inclusive),  and 1 (exclusive):
+          el.style.color = "#" + Math.random().toString().slice(2, 8); // this will get us a random 6 digit number
+        }
+      },
+      'theme': {
+        bind: function(el, binding, vnode){
+          if (binding.value == 'wide'){
+            el.style.maxWidth = '1200px';
+          } else if (binding.value == 'narrow'){
+            el.style.maxWidth = '600px';
+          }
+          if (binding.arg == 'column'){
+            el.style.background = '#ddd';
+            el.style.padding = '20px';
+          }
+        }
+      }
     }
   }
 </script>
