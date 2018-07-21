@@ -5,7 +5,8 @@
     <h1>All Blog Articles</h1>
     <input type="text" v-model="search" placeholder="search blogs">
     <div v-for="blog in filteredBlogs" class="single-blog">
-      <h2 v-rainbow>{{blog.title | to-uppercase }}</h2>
+      <!-- in order to insert dynamic content (the id in this case), we need to do some data binding (v-bind) which is the reason why '/blogs/' is in strings -->
+      <router-link v-bind:to="'/blogs/' + blog.id"><h2 v-rainbow>{{blog.title | to-uppercase }}</h2></router-link>
       <article>{{blog.body | snippet }}</article>
     </div>
   </div>

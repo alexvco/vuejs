@@ -15,13 +15,15 @@
   import showBlogs from './components/showBlogs.vue'
   import listBlogs from './components/listBlogs.vue'
   import appHeader from './components/appHeader.vue'
+  import singleBlog from './components/singleBlog.vue'
 
   export default {
     components: {
       'add-blog': addBlog,
       'show-blogs': showBlogs,
       'list-blogs': listBlogs,
-      'app-header': appHeader
+      'app-header': appHeader,
+      'single-blog': singleBlog
     },
     data: function() {
       return {
