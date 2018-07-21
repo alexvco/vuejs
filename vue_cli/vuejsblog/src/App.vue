@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
+  <div>
     <!-- <add-blog></add-blog> -->
     <!-- <show-blogs></show-blogs> -->
     <!-- <list-blogs></list-blogs> -->
-    
+
+    <app-header></app-header>
     <!-- This is saying, this is where we want to get the components loaded in when we visit those routes  -->
     <router-view></router-view>
   </div>
@@ -13,12 +14,14 @@
   import addBlog from './components/addBlog.vue'
   import showBlogs from './components/showBlogs.vue'
   import listBlogs from './components/listBlogs.vue'
+  import appHeader from './components/appHeader.vue'
 
   export default {
     components: {
       'add-blog': addBlog,
       'show-blogs': showBlogs,
-      'list-blogs': listBlogs
+      'list-blogs': listBlogs,
+      'app-header': appHeader
     },
     data: function() {
       return {
