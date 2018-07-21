@@ -1,13 +1,31 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueResource from 'vue-resource'
+import VueRouter from 'vue-router'
+import Routes from './routes' // we need to import this as we chose to keep our routes in their own separate file
 
 Vue.use(VueResource);
+Vue.use(VueRouter);
 
+// We need to create a new instance of the VueRouter that we Vue.use
+// We pass it an object, which will take our routes so basically we need to register our routes
+// We could register the routes here, but I prefer registering them outside in their own files (routes.js) to be more organized
+const router = new VueRouter({
+	routes: Routes 
+	// we could have registered the routes here as follows
+	// routes: [
+	//   {path: "/", component: showBlogs}, 
+	//   {path: "/blogs/new", component: addBlog}
+	// ]
+});
+
+
+// We need to say we want to use the const router (which is an instance) in our new Vue
 
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(App),
+  router: router
 })
 
 

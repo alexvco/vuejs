@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <!-- <add-blog></add-blog> -->
-    <show-blogs></show-blogs>
-    <list-blogs></list-blogs>
+    <!-- <show-blogs></show-blogs> -->
+    <!-- <list-blogs></list-blogs> -->
+    
+    <!-- This is saying, this is where we want to get the components loaded in when we visit those routes  -->
+    <router-view></router-view>
   </div>
 </template>
 
